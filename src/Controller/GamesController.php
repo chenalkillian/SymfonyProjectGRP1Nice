@@ -15,7 +15,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class GamesController extends AbstractController
 {
 
-    #[Route('/games', name: 'app_games')]
+    #[Route('/games/index', name: 'app_games')]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $game=$entityManager->getRepository(GamesInfo::class)->findAll();
