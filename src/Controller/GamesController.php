@@ -25,8 +25,8 @@ class GamesController extends AbstractController
     #[Route('/games/form', name: 'app_games_form')]
     public function form(Request $request,EntityManagerInterface $entityManager):Response{
 
-        $game=new Game();
-        $form=$this->createFormBuilder($game)
+        $GamesInfo=new GamesInfo();
+        $form=$this->createFormBuilder($GamesInfo)
             ->add('name')
             ->add('dev')
             ->add('editor')
@@ -40,10 +40,10 @@ class GamesController extends AbstractController
             ->getForm();
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $game=$form->getData();
-            $game->setOwner($this->getUser());
+            $GamesInfo=$form->getData();
+           // $GamesInfo->setOwner($this->getUser());
 
-            $entityManager->persist($game);
+            $entityManager->persist($GamesInfo);
             $entityManager->flush();
         }return  $this->render('games/form.html.twig',
             ['form'=>$form]);
