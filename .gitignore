@@ -8,7 +8,7 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-
+.idea/
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
@@ -23,3 +23,4 @@
 /public/assets/
 /assets/vendor
 ###< symfony/asset-mapper ###
+
