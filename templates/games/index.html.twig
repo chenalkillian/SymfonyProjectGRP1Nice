@@ -60,20 +60,35 @@
         <th>Genre</th>
         <th>Plateforme</th>
     </tr>
-    </thead>
-    <tbody>
+
     {% for game in Game %}
-        <tr>
-            <td>{{ game.name }}</td>
-            <td>{{ game.dev }}</td>
-            <td>{{ game.editor }}</td>
-            <td>{{ game.releasedate }}</td>
-            <td>{{ game.price }}</td>
-            <td>{{ game.gender }}</td>
-            <td>{{ game.PlatformGame }}</td>
+
+                <form action="{{ path('app_games_edit', {id: game.id}) }}" method="post">
+                    <label for="pv">PV:</label>
+                    <input type="text" id="pv" name="pv" value="{{ game.name }}" ><br>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="{{ game.editor }}" ><br>
+
+                    <label for="mana">Mana:</label>
+                    <input type="text" id="mana" name="mana" value="{{ game.releasedate }}" ><br>
+
+                    <label for="ap">AP:</label>
+                    <input type="text" id="ap" name="ap" value="{{ game.price }}" ><br>
+
+                    <label for="ad">AD:</label>
+                    <input type="text" id="ad" name="ad" value="{{ game.gender }}" ><br>
+
+                    <label for="ad">AD:</label>
+                    <input type="text" id="ad" name="ad" value="{{ game.PlatformGame }}" ><br>
+
+                    <a href="{{ path('app_player_delete', {id: game.id}) }}">Supprimer</a>
+                    <button type="submit">modifier</button>
+                </form>
+            </td>
         </tr>
     {% endfor %}
-    </tbody>
+    </thead>
 </table>
 
 </body>
