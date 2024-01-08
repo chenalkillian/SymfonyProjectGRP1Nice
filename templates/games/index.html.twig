@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,8 +44,33 @@
         table tbody tr:hover {
             background-color: #f5f5f5;
         }
+
+        /* Added styles for form elements */
+        form {
+            display: inline-block; /* Display form as inline-block to be in the same line */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
 
 <h2>Informations sur le Jeu Vidéo</h2>
@@ -59,37 +85,60 @@
         <th>Prix</th>
         <th>Genre</th>
         <th>Plateforme</th>
+        <th>Rating</th>
+        <th>LastModificationUser</th>
+        <th>Action</th>
     </tr>
-
+    </thead>
+    <tbody>
     {% for game in Game %}
-
+        <tr>
+            <td>{{ game.name }}</td>
+            <td>{{ game.dev }}</td>
+            <td>{{ game.editor }}</td>
+            <td>{{ game.releasedate }}</td>
+            <td>{{ game.price }}</td>
+            <td>{{ game.gender }}</td>
+            <td>{{ game.platformgame }}</td>
+            <td>{{ game.rating }}</td>
+            <td>{{ game.lastmodificationuser }}</td>
+            <td>
                 <form action="{{ path('app_games_edit', {id: game.id}) }}" method="post">
-                    <label for="pv">PV:</label>
-                    <input type="text" id="pv" name="pv" value="{{ game.name }}" ><br>
+                    <label for="name">name :</label>
+                    <input type="text" id="name" name="name" value="{{ game.name }}" ><br>
 
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" value="{{ game.editor }}" ><br>
+                    <label for="dev">dev :</label>
+                    <input type="text" id="dev" name="dev" value="{{ game.dev }}" ><br>
 
-                    <label for="mana">Mana:</label>
-                    <input type="text" id="mana" name="mana" value="{{ game.releasedate }}" ><br>
+                    <label for="editor">editor :</label>
+                    <input type="text" id="editor" name="editor" value="{{ game.editor }}" ><br>
 
-                    <label for="ap">AP:</label>
-                    <input type="text" id="ap" name="ap" value="{{ game.price }}" ><br>
+                    <label for="releasedate">releasedate :</label>
+                    <input type="text" id="releasedate" name="releasedate" value="{{ game.releasedate }}" ><br>
 
-                    <label for="ad">AD:</label>
-                    <input type="text" id="ad" name="ad" value="{{ game.gender }}" ><br>
+                    <label for="price">price :</label>
+                    <input type="text" id="price" name="price" value="{{ game.price }}" ><br>
 
-                    <label for="ad">AD:</label>
-                    <input type="text" id="ad" name="ad" value="{{ game.PlatformGame }}" ><br>
+                    <label for="gender">gender :</label>
+                    <input type="text" id="gender" name="gender" value="{{ game.gender }}" ><br>
 
-                    <a href="{{ path('app_player_delete', {id: game.id}) }}">Supprimer</a>
+                    <label for="platformgame">platformgame :</label>
+                    <input type="text" id="platformgame" name="platformgame" value="{{ game.platformgame }}" ><br>
+
+                    <label for="rating">rating :</label>
+                    <input type="text" id="rating" name="rating" value="{{ game.rating }}" ><br>
+
+                    <label for="lastmodificationuser">lastmodificationuser :</label>
+                    <input type="text" id="lastmodificationuser" name="lastmodificationuser" value="{{ game.lastmodificationuser }}" ><br>
+
                     <button type="submit">modifier</button>
                 </form>
             </td>
         </tr>
     {% endfor %}
-    </thead>
+    </tbody>
 </table>
 
 </body>
+
 </html>
