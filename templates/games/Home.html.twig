@@ -10,7 +10,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('chemin_de_ton_image.jpg') center/cover no-repeat fixed;
+            background: url('https://i.gifer.com/DW2Y.gif') center/cover no-repeat fixed;
             color: #fff; /* Changement de la couleur du texte pour s'adapter au fond sombre */
         }
 
@@ -99,9 +99,25 @@
             color: #fff;
             text-align: center;
             padding: 10px;
+        }
+
+        .back-button {
             position: fixed;
-            bottom: 0;
-            width: 100%;
+            bottom: 50px;
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -119,11 +135,11 @@
     <a href="/logout">Logout</a>
 </nav>
 
-
-
 <footer>
-    &copy; 2024 Game Informer. All rights reserved.
 </footer>
+
+<a href="javascript:history.go(-1)" class="back-button">Retour</a>
+
 </body>
 
 </html>

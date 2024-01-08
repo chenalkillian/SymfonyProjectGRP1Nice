@@ -161,6 +161,7 @@
             <td>{{ game.platformgame }}</td>
             <td>{{ game.rating }}</td>
             <td>{{ game.lastmodificationuser }}</td>
+            <td> <a href="{{ path('app_games_show', {id: game.id}) }}">En Savoir Plus</a></td>
             {% if app.user %}
             <td>
 
