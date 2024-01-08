@@ -77,4 +77,10 @@ class  GamesController extends AbstractController{
 
         return $this->redirectToRoute('app_games_show_all');
     }
+    #[Route('/games/delete/{id}', name: 'app_games_delete')]
+    public function delete(EntityManagerInterface $entityManager,GamesInfo $game){
+        $entityManager->remove($game);
+        $entityManager->flush();
+        return $this->redirectToRoute('app_games_show_all');
+    }
 }

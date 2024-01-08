@@ -139,6 +139,7 @@
                     <label for="lastmodificationuser">lastmodificationuser :</label>
                     <input type="text" id="lastmodificationuser" name="lastmodificationuser" value="{{ game.lastmodificationuser }}" ><br>
 
+                    <a href="{{ path('app_games_delete', {id: game.id}) }}">Supprimer</a>
                     <button type="submit">modifier</button>
                 </form>
             </td>
