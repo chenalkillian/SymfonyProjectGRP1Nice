@@ -42,6 +42,9 @@ class GamesInfo
     #[ORM\Column(length: 255)]
     private ?string $LastModificationUser = null;
 
+    #[ORM\ManyToOne]
+    private ?User $utilisateur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -151,6 +154,18 @@ class GamesInfo
     public function setLastModificationUser(string $LastModificationUser): static
     {
         $this->LastModificationUser = $LastModificationUser;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?User
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?User $utilisateur): static
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

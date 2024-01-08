@@ -74,7 +74,12 @@
 {% for game in Game %}
     <tr>
         <form action="#" >
-            <td>{{ game.name }} </td>
+            <div class="container">
+                <input type="button" onclick="window.location.href='//127.0.0.1:8000/register'" value="Ajouter un utilisateur">
+                <input type="button" onclick="window.location.href='//127.0.0.1:8000/logout'" value="Déconnexion">
+
+
+            </div>
 
 
 

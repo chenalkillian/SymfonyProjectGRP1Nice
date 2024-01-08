@@ -7,17 +7,22 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Exception\NotSupported;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class GamesController extends AbstractController
 {
 
-    #[Route('/games', name: 'app_games')]
+    #[Route('/games/index', name: 'app_games')]
     public function index(EntityManagerInterface $entityManager): Response
     {
         $game=$entityManager->getRepository(GamesInfo::class)->findAll();
         return $this->render('games/index.html.twig',['Game'=>$game]);
 
     }
+
+
+
 }
