@@ -40,19 +40,41 @@
 <style>
     body {
         background-color: #1a1a1a;
-        color: #fff;
+        color: #161313;
         font-family: 'Press Start 2P', cursive;
+        font-size: 20px;
         margin: 0;
         padding: 0;
+        background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWxreWFjdHA5Y2VuNjZ5ZG53eHRnZXZmeDNzYjJzY3hteHluc29pYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7OH9z8lL8cnmkOxb6A/giphy.gif");
+        background-size: cover;
     }
     nav {
         background-color: #333;
         padding: 10px;
         text-align: center;
     }
+    .button {
+        position: fixed;
+        top: 50%;
+        left: 38%;
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: #161313;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+        width: 20%;
+    }
 
+    .button:hover {
+        background-color: #45a049;
+    }
     nav a {
-        color: #fff;
+        color: white;
         text-decoration: none;
         padding: 10px 20px;
         margin: 0 10px;
@@ -69,6 +91,7 @@
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
+        background-color: white;
     }
 
     th, td {
@@ -83,9 +106,7 @@
         color: #1a1a1a;
     }
 
-    tr:hover {
-        background-color: #333;
-    }
+
 
     /* Style the form */
     form {

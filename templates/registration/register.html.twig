@@ -11,7 +11,25 @@
             margin: 0;
             padding: 0;
         }
+        .back-button {
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
 
+        .back-button:hover {
+            background-color: #45a049;
+        }
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -71,6 +89,7 @@
 
         <label for="secretpassword">code pour mode admin :</label>
         <input type="password" id="secretpassword" name="secretpassword" ><br>
+        <a href="javascript:history.go(-1)" class="back-button">Retour</a>
 
         <button type="submit" class="btn">Register</button>
         {{ form_end(registrationForm) }}

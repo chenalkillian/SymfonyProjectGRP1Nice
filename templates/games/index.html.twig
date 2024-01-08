@@ -88,7 +88,25 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             cursor: pointer;
         }
+        .back-button {
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
 
+        .back-button:hover {
+            background-color: #45a049;
+        }
         .btn:hover {
             background-color: #45a049;
         }
@@ -133,6 +151,8 @@
 <div class="container">
     <a class="btn" href="//127.0.0.1:8000/register">Ajouter un utilisateur</a>
     <a class="btn btn-secondary" href="//127.0.0.1:8000/logout">Déconnexion</a>
+    <a href="javascript:history.go(-1)" class="back-button">Retour</a>
+
 </div>
 <table>
     <thead>

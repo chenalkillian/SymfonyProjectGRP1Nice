@@ -12,6 +12,9 @@
         <a href="/games/all">Show All Games</a>
         <a href="/logout">Logout</a>
     </nav>
+
+    <a href="javascript:history.go(-1)" class="back-button">Retour</a>
+
 </head>
 <body>
 
@@ -40,7 +43,24 @@
         margin: 0;
         padding: 0;
     }
+    .back-button {
+        position: fixed;
+        bottom: 50px;
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: #fff;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+    }
 
+    .back-button:hover {
+        background-color: #45a049;
+    }
     h1 {
         text-align: center;
         color: #4CAF50;
