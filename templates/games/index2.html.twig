@@ -1,6 +1,6 @@
-
 <table>
-    <tr>
+        <tr>
+        <td>id</td>
         <td>name</td>
         <td>dev</td>
         <td>editor</td>
@@ -11,17 +11,20 @@
         <td>rating</td>
         <td>lastmodificationuser</td>
     </tr>
-    <tr>
-        <td>{{game.name}}</td>
-        <td>{{game.dev}}</td>
-        <td>{{game.editor}}</td>
-        <td>{{game.releasedate}}</td>
-        <td>{{game.price}}</td>
-        <td>{{game.gender}}</td>
-        <td>{{game.platformgame}}</td>
-        <td>{{game.rating}}</td>
-        <td>{{game.lastmodificationuser}}</td>
+    {% for Game in Games %}
+        <tr>
+            <td>{{ Game.id }}</td>
+            <td>{{ Game.name }}</td>
+            <td>{{ Game.dev }}</td>
+            <td>{{ Game.editor }}</td>
+            <td>{{ Game.releasedate }}</td>
+            <td>{{ Game.price }}</td>
+            <td>{{ Game.gender }}</td>
+            <td>{{ Game.platformgame }}</td>
+            <td>{{ Game.rating }}</td>
+            <td>{{ Game.lastmodificationuser }}</td>
     </tr>
+    {% endfor %}
 </table>
 
 

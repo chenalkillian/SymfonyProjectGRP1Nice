@@ -125,7 +125,7 @@
     </tr>
     </thead>
     <tbody>
-    {% for game in Game %}
+    {% for game in Games %}
         <tr>
             <td>{{ game.name }}</td>
             <td>{{ game.dev }}</td>
@@ -155,9 +155,6 @@
 
                     <label for="gender">gender :</label>
                     <input type="text" id="gender" name="gender" value="{{ game.gender }}" ><br>
-
-
-
 
                     <label for="platformgame">platformgame :</label>
                     <input type="text" id="platformgame" name="platformgame" value="{{ game.platformgame }}" ><br>
