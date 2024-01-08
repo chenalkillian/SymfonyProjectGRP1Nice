@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Jeux Vidéo</title>
+    <title>Informations sur le Jeu Vidéo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,79 +13,142 @@
             background-color: #f4f4f4;
         }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1em;
-            text-align: center;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
         h2 {
-            color: #333;
-        }
-
-        p {
-            color: #666;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 1em;
-            position: fixed;
-            bottom: 0;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 0;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%; /* Réduire la largeur du tableau */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 20px auto; /* Centrer le tableau */
+            background-color: #fff;
+        }
+
+        table th, table td {
+            padding: 8px 12px; /* Réduire le padding des cellules */
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Added styles for form elements */
+        form {
+            display: inline-block; /* Display form as inline-block to be in the same line */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
             width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Site de Jeux Vidéo</h1>
-    <p>Bienvenue sur notre site de présentation de jeux vidéo</p>
-</header>
+<h2>Informations sur le Jeu Vidéo</h2>
 
-<section>
-    <h2>Derniers Jeux</h2>
-    <p>Explorez les derniers jeux vidéo et découvrez les nouveautés passionnantes.</p>
-    <!-- Ajoutez ici des sections, des images ou des liens vers les derniers jeux -->
-</section>
-
-<section>
-    <h2>À Propos de Nous</h2>
-    <p>Nous sommes passionnés par les jeux vidéo et nous aimons partager notre enthousiasme avec vous.</p>
-    <!-- Ajoutez ici des informations supplémentaires sur votre site -->
-</section>
-
-<footer>
-    <p>&copy; 2024 Site de Jeux Vidéo</p>
-</footer>
-
-
-
-{% for game in Game %}
+<table>
+    <thead>
     <tr>
+        <th>Nom</th>
+        <th>Développeur</th>
+        <th>Éditeur</th>
+        <th>Date de Sortie</th>
+        <th>Prix</th>
+        <th>Genre</th>
+        <th>Plateforme</th>
+        <th>Rating</th>
+        <th>LastModificationUser</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for game in Game %}
+        <tr>
+            <td>{{ game.name }}</td>
+            <td>{{ game.dev }}</td>
+            <td>{{ game.editor }}</td>
+            <td>{{ game.releasedate }}</td>
+            <td>{{ game.price }}</td>
+            <td>{{ game.gender }}</td>
+            <td>{{ game.platformgame }}</td>
+            <td>{{ game.rating }}</td>
+            <td>{{ game.lastmodificationuser }}</td>
+            <td>
+                <form action="{{ path('app_games_edit', {id: game.id}) }}" method="post">
+                    <label for="name">name :</label>
+                    <input type="text" id="name" name="name" value="{{ game.name }}" ><br>
+
+                    <label for="dev">dev :</label>
+                    <input type="text" id="dev" name="dev" value="{{ game.dev }}" ><br>
+
+                    <label for="editor">editor :</label>
+                    <input type="text" id="editor" name="editor" value="{{ game.editor }}" ><br>
+
+                    <label for="releasedate">releasedate :</label>
+                    <input type="text" id="releasedate" name="releasedate" value="{{ game.releasedate }}" ><br>
+
+                    <label for="price">price :</label>
+                    <input type="text" id="price" name="price" value="{{ game.price }}" ><br>
+
+                    <label for="gender">gender :</label>
+                    <input type="text" id="gender" name="gender" value="{{ game.gender }}" ><br>
+{% for game in Game %}
+   
+   <!--<tr>
         <form action="#" >
             <div class="container">
                 <input type="button" onclick="window.location.href='//127.0.0.1:8000/register'" value="Ajouter un utilisateur">
                 <input type="button" onclick="window.location.href='//127.0.0.1:8000/logout'" value="Déconnexion">
 
 
-            </div>
+            </div>-->
 
+                    <label for="platformgame">platformgame :</label>
+                    <input type="text" id="platformgame" name="platformgame" value="{{ game.platformgame }}" ><br>
 
+                    <label for="rating">rating :</label>
+                    <input type="text" id="rating" name="rating" value="{{ game.rating }}" ><br>
 
-        </form>
-    </tr>
-{% endfor %}
+                    <label for="lastmodificationuser">lastmodificationuser :</label>
+                    <input type="text" id="lastmodificationuser" name="lastmodificationuser" value="{{ game.lastmodificationuser }}" ><br>
+
+                    <button type="submit">modifier</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 </body>
+
 </html>
