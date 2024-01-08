@@ -68,13 +68,47 @@
             border: none;
             cursor: pointer;
         }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn-secondary {
+            background-color: #008CBA;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0077A8;
+        }
     </style>
 </head>
 
 <body>
 
 <h2>Informations sur le Jeu Vidéo</h2>
-
+<div class="container">
+    <a class="btn" href="//127.0.0.1:8000/register">Ajouter un utilisateur</a>
+    <a class="btn btn-secondary" href="//127.0.0.1:8000/logout">Déconnexion</a>
+</div>
 <table>
     <thead>
     <tr>
@@ -121,14 +155,9 @@
 
                     <label for="gender">gender :</label>
                     <input type="text" id="gender" name="gender" value="{{ game.gender }}" ><br>
-   <!--<tr>
-        <form action="#" >
-            <div class="container">
-                <input type="button" onclick="window.location.href='//127.0.0.1:8000/register'" value="Ajouter un utilisateur">
-                <input type="button" onclick="window.location.href='//127.0.0.1:8000/logout'" value="Déconnexion">
 
 
-            </div>-->
+
 
                     <label for="platformgame">platformgame :</label>
                     <input type="text" id="platformgame" name="platformgame" value="{{ game.platformgame }}" ><br>

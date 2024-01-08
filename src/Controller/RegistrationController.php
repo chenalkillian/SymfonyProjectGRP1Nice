@@ -31,9 +31,17 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            $password=$request->request->get('secretpassword');
+            if ($password=="123456"){
+                $user->setRoles((array)"ROLE_ADMIN");
+                $entityManager->persist($user);
+                $entityManager->flush();
+            }else{
+                $user->setRoles((array)"ROLE_EDIT");
+                $entityManager->persist($user);
+                $entityManager->flush();
+            }
 
-            $entityManager->persist($user);
-            $entityManager->flush();
             // do anything else you need here, like send an email
 
             return $this->redirectToRoute('app_games');

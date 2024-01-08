@@ -14,6 +14,11 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+    <label for="secretpassword">code pour mode admin :</label>
+    <input type="password" id="secretpassword" name="secretpassword" ><br>
+
+
+
+    <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
