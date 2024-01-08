@@ -1,3 +1,11 @@
+
+<nav>
+    <a href="/Home">Home</a>
+    <a href="/games/form">Add New Game</a>
+    <a href="/games/all">Show All Games</a>
+    <a href="/logout">Logout</a>
+</nav>
+
 <table>
         <tr>
         <td>id</td>
@@ -38,6 +46,24 @@
         font-family: 'Press Start 2P', cursive;
         margin: 0;
         padding: 0;
+    }
+    nav {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #555;
     }
 
     /* Style the table */

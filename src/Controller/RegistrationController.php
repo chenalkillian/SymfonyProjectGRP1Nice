@@ -43,7 +43,7 @@ class RegistrationController extends AbstractController
             }
 
 
-            return $this->redirectToRoute('app_games');
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -69,7 +69,7 @@ class RegistrationController extends AbstractController
             $security->logout(false);
         }
 
-        return $this->redirectToRoute('app_login');
+        return $this->redirectToRoute('app_games_home');
 
     }
 }

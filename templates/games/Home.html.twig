@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Informer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #212121;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .featured-game {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .featured-game img {
+            max-width: 40%;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .featured-game-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Game Informer</h1>
+</header>
+
+<nav>
+    <a href="/Home">Home</a>
+    <a href="/register">Add New Users</a>
+    <a href="/games/form">Add New Game</a>
+    <a href="/games/all">Show All Games</a>
+    <a href="/logout">Logout</a>
+</nav>
+
+<section>
+    <div class="featured-game">
+        <img src="game-image.jpg" alt="Featured Game">
+        <div class="featured-game-content">
+            <div class="game-title">Featured Game Title</div>
+            <div class="game-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</div>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Add more sections for news, reviews, and other content -->
+
+</section>
+
+<footer>
+    &copy; 2024 Game Informer. All rights reserved.
+</footer>
+</body>
+
+</html>

@@ -15,6 +15,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class  GamesController extends AbstractController{
+
+
+
+    #[Route('/Home', name: 'app_games_home')]
+    public function home(){
+        return $this->render('games/Home.html.twig');
+    }
+
+
+
+
+
     #[Route('/games/show/{id}', name: 'app_games_show')]
     public function show(GamesInfo $game,EntityManagerInterface $entityManager){
         $games = $entityManager->getRepository(GamesInfo::class)->findAll();

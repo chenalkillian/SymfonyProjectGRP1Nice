@@ -1,4 +1,4 @@
-{# templates/games/message.html.twig #}
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -6,6 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message</title>
+    <nav>
+        <a href="/Home">Home</a>
+        <a href="/games/form">Add New Game</a>
+        <a href="/games/all">Show All Games</a>
+        <a href="/logout">Logout</a>
+    </nav>
 </head>
 <body>
 
@@ -49,7 +55,24 @@
         box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
         background-color: #333;
     }
+    nav {
+        background-color: #333;
+        padding: 10px;
+        text-align: center;
+    }
 
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
     label {
         display: block;
         margin-bottom: 8px;
