@@ -121,6 +121,16 @@
 
                     <label for="gender">gender :</label>
                     <input type="text" id="gender" name="gender" value="{{ game.gender }}" ><br>
+{% for game in Game %}
+   
+   <!--<tr>
+        <form action="#" >
+            <div class="container">
+                <input type="button" onclick="window.location.href='//127.0.0.1:8000/register'" value="Ajouter un utilisateur">
+                <input type="button" onclick="window.location.href='//127.0.0.1:8000/logout'" value="Déconnexion">
+
+
+            </div>-->
 
                     <label for="platformgame">platformgame :</label>
                     <input type="text" id="platformgame" name="platformgame" value="{{ game.platformgame }}" ><br>

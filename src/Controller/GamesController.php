@@ -9,11 +9,14 @@ use Doctrine\ORM\Exception\NotSupported;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class  GamesController extends AbstractController
-{
+
+
 
     /*#[Route('/games/show/{id}', name: 'app_games_show')]
     public function show(EntityManagerInterface $entityManager,int $id){
@@ -22,6 +25,9 @@ class  GamesController extends AbstractController
     }*/
     #[Route('/games/show/all', name: 'app_games_show_all')]
     public function show_all(EntityManagerInterface $entityManager): Response
+=======
+    #[Route('/games/index', name: 'app_games')]
+    public function index(EntityManagerInterface $entityManager): Response
     {
         $game=$entityManager->getRepository(GamesInfo::class)->findAll();
         return $this->render('games/index.html.twig',['Game'=>$game]);
